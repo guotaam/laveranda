@@ -11,6 +11,7 @@ use App\Form\ReservationType;
 use App\Repository\AvisRepository;
 use App\Repository\ProduitRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use App\Repository\ReservationRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -18,7 +19,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class MainController extends AbstractController
 {
-    #[Route('/main', name: 'app_main')]
+    #[Route('/', name: 'app_main')]
     public function index(): Response
     {
         return $this->render('main/index.html.twig', [
@@ -84,5 +85,13 @@ class MainController extends AbstractController
     {
         return $this->render('main/contact.html.twig');
     }
+    #[Route('/main/profil/', name: 'profil')]
+    public function profil(ReservationRepository $repo)
+    {
+        $resevations = $repo->findBy(['membre' => $this->getUser()]);
 
+        return $this->render("main/profil.html.twig", [
+            'resa' => $resevations
+        ]);
+    }
 }

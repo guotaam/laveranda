@@ -5,22 +5,22 @@
 {% block body %}
 <h1>Admin Avis</h1>
 
-
-
+ 
+    
 		{{ form_start(form) }} 
           {{ form_row(form.note) }}
         {{ form_row(form.commentaire,{
          attr:{
          placeholder:"Poster un commentaire"
              }}) }}
-   
-		{# {{ form_row(form.reponse)}} #}
-		
+    
+ {% if editMode %} 
+		{{ form_row(form.reponse)}}
+		{% endif %}
 		<button type="submit" class="btn btn-primary">Valider</button>
 
 		{{ form_end(form) }}
-	    
-<br><br><br>
+<br><br>
    
  {% for item in avisAll %}
  <div class= "bg-light text-dark">
@@ -30,13 +30,14 @@
 <p>{{item.note}}</p>
 <p>Votre commentaire:{{item.commentaire}}</p>
 <p>{{item.reponse}}</p>
-
+<button type="submit" class="btn btn-primary" href="{{path('admin_crud_avis_edit', {id:item.id }) }}">Repondre</button>
 </div>
 
-<hr>
+<hr><br>
 </div>
-
-        
+<br><br>
+   
+  
 {% endfor %}
 
 

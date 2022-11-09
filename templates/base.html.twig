@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
        <link type="text/css" rel="stylesheet" href="{{asset('css/style.css')}}">
        
+       
     <body>
 
 
@@ -35,6 +36,7 @@
                 {% if app.user %}
                 <li> <a class="nav-link" href="{{path('app_logout')}}">Déconnexion</a></li>
                 <li><a class="nav-link" href="{{path('app_new_reservation')}}">Reservation</a></li>
+                 <a class="nav-link " href="{{path('profil')}}">Mon compte</a></li>
                 
                 {% else %}
                 <li> <a class="nav-link" href="{{path('app_login')}}">Se connecter</a></li>
@@ -53,6 +55,7 @@
     </div>
   </div>
 </nav>
+
 
    <div class="container ">
 			{% for label, msgs in app.flashes %}

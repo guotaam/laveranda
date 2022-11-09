@@ -3,18 +3,211 @@
 {% block title %}Hello MainController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<br>
+<header>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<h1>Restaurant <span>La</span> Veranda</h1>
+ 
+ 
+    
+    </header>   
+       
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/guotaam/Dropbox/PC/Desktop/laveranda/laveranda/src/Controller/MainController.php'|file_link(0) }}">src/Controller/MainController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/guotaam/Dropbox/PC/Desktop/laveranda/laveranda/templates/main/index.html.twig'|file_link(0) }}">templates/main/index.html.twig</a></code></li>
-    </ul>
+  
+	<br><br><br>
+  <section class="d-flex justify-content-between">
+
+
+<div class="text-center"> 
+   
+     <img src="{{asset('images/p3.jpeg')}}" width="150px"  height="150px" alt="pates"> <br>
+       <a href=" " class="">Des Plats</a>
+   
 </div>
+
+    <div class="text-center"> 
+     <img src="{{asset('images/p2.jpeg')}}" width="150px" height="150px" alt="hamburguer"><br>
+      <a href="" class="">Des Hamburguers </a>
+     </div>
+
+	 <div class="text-center"> 
+     <img src="{{asset('images/pizza.jpeg')}}" width="150px"  height="150px" alt="pizza"><br>
+      <a href="" class="">Des Pizzas</a>
+    </div>
+	        	
+</section>
+<br><br>
+{# 
+  <section class="d-flex justify-content-between">
+    <div class="container">
+      <div class="heading_container">
+        <hr>
+        <h2>
+         Nos Saveurs
+        </h2>
+        <hr>
+      </div>
+    </div>
+    <div class="container-fluid">
+
+      <div class="plat_container">
+        <div class="box">
+          <img src="images/p1.jpeg" alt="">
+          <div class="link_box">
+            <h5>
+             Hamburguer
+            </h5>
+            <a href=""> Voir Plus</a>
+          </div>
+        </div>
+        <br>
+        <div class="box">
+          <img src="images/p2.jpeg" alt="">
+          <div class="link_box">
+            <h5>
+             Nos Plat
+            </h5>
+            <a href=""> Voir Plus</a>
+          </div>
+        </div>
+        <br>
+        <div class="box">
+          <img src="images/p4.jpeg" alt="">
+          <div class="link_box">
+            <h5>
+              Nos Dessert
+            </h5>
+            <a href="">Voir Plus</a>
+          </div>
+        </div>
+        <br>
+        <div class="box">
+          <img src="images/p3.jpeg" alt="">
+          <div class="link_box">
+           <h5>
+              Nos Salades
+            </h5>
+            <a href="">Voir Plus</a>
+            </div>
+            </div>
+            <br>
+           <div class="box">
+          <img src="images/p3.jpeg" alt="">
+          <div class="link_box">
+            <h5>
+              Nos Boissons
+            </h5>
+            <a href="">Voir Plus</a>
+            </div>
+            </div>
+            <br>
+        <div class="box">
+          <img src="images/pizza.jpeg" alt="">
+          <div class="link_box">
+            <h5>
+              Nos Pizza
+            </h5>
+            <a href="">Voir Plus</a>
+            </div>
+            </div>
+       
+      </div>
+    </div> #}
+  {# </section> #}
+  {# <!-- fruit section -->
+
+  <section class="fruit_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <hr>
+        <h2>
+          Fresh Fruit
+        </h2>
+      </div>
+    </div>
+    <div class="container-fluid">
+
+      <div class="fruit_container">
+        <div class="box">
+          <img src="images/f-1.jpg" alt="">
+          <div class="link_box">
+            <h5>
+              Orange
+            </h5>
+            <a href="">
+              Buy Now
+            </a>
+          </div>
+        </div>
+        <div class="box">
+          <img src="images/f-2.jpg" alt="">
+          <div class="link_box">
+            <h5>
+              Blueberry
+            </h5>
+            <a href="">
+              Buy Now
+            </a>
+          </div>
+        </div>
+        <div class="box">
+          <img src="images/f-3.jpg" alt="">
+          <div class="link_box">
+            <h5>
+              Banana
+            </h5>
+            <a href="">
+              Buy Now
+            </a>
+          </div>
+        </div>
+        <div class="box">
+          <img src="images/f-4.jpg" alt="">
+          <div class="link_box">
+            <h5>
+              Apple
+            </h5>
+            <a href="">
+              Buy Now
+            </a>
+          </div>
+        </div>
+        <div class="box">
+          <img src="images/f-5.jpg" alt="">
+          <div class="link_box">
+            <h5>
+              Mango
+            </h5>
+            <a href="">
+              Buy Now
+            </a>
+          </div>
+        </div>
+        <div class="box">
+          <img src="images/f-6.jpg" alt="">
+          <div class="link_box">
+            <h5>
+              Strawberry
+            </h5>
+            <a href="">
+              Buy Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> #}
+<section class="form">
+ <div class="container-fluid">
+ <div class="row">
+        <div class="offset-lg-2 col-md-10 offset-md-1">
+          <div class="formc">
+            <hr>
+            <h2>
+             Contactez_Nous!
+            </h2>
+          </div>
+        </div>
+      </div>
+
 {% endblock %}

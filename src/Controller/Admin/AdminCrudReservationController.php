@@ -55,7 +55,19 @@ class AdminCrudReservationController extends AbstractController
 
 
     }
+ 
+    #[Route('/admin/crud/reservation/delete/{id}', name:'admin_crud_reservation_delete' )]
+    public function delete(Reservation $reservation = null, EntityManagerInterface $manager): Response
+    {
+        if ($reservation) {
+            $manager->remove($reservation);
+            $manager->flush();
+            $this->addFlash('success', 'votre reservation a bien été supprimé !');
+           
+        }
+        return $this->redirectToRoute('app_new_reservation');
 
+    } 
 
 
 
