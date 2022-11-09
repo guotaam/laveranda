@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminCrudReservationController!{% endblock %}
+
+{% block body %}
+
+<h1 class="text-center">Admin Reservation</h1>
+
+	{# <a href="" class="btn btn-success my-3">Ajouter un Produit</a> #}
+
+	<table class="table table-bordered text-center">
+		<thead>
+			<tr>
+				<th>Nom</th>
+				<th>Prenom</th>
+                <th>Tel</th>
+				<th>Date</th>
+				<th>Nombre des personnes</th>
+				<th>Message</th>
+				
+				<th></th>
+				<th></th>
+				
+			</tr>
+		</thead>
+		<tbody>
+			{% for data in resa %}
+				<tr>
+					<td>{{ data.membre.nom }}</td>
+					<td>{{ data.membre.prenom }}</td>
+                    <td>{{ data.membre.telephone }}</td>
+					
+					<td>{{ data.date|date('Y:m:d a H:i:s') }}</td>
+					<td>{{ data.nbrpersonne}}</td>
+					
+					<td>
+						<a href="{{path('app_reservation_edit',{'id':data.id})}}" class="text-dark">
+							<i class="fas fa-edit fa-lg"></i>
+						</a>
+
+						{# <a onclick="return confirm('Voulez-vous supprimer cette reservation ?')" href="{{path('admin_crud_reservation_delete',{'id':data.id} )}}"<class="text-dark">
+							<i class="fas fa-trash-alt fa-lg"></i> #}
+						</a>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+
+	</table>  
+
+</div>
+
+
+{% endblock %}

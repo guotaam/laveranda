@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+{% block title %}hello
+{% endblock %}
+{% block body %}
+
+<div>
+
+<h1 class="text-center">Admin Produits</h1>
+
+	{# <a href="" class="btn btn-success my-3">Ajouter un Produit</a> #}
+
+	<table class="table table-bordered text-center">
+		<thead>
+			<tr>
+				<th>titre</th>
+				<th>description</th>
+				<th>photo</th>
+				<th>prix</th>
+				<th>catagories</th>
+				<th>Date</th>
+				<th></th>
+				<th></th>
+				
+			</tr>
+		</thead>
+		<tbody>
+			{% for data in prods %}
+				<tr>
+					<td>{{ data.titre }}</td>
+					<td>{{ data.description }}</td>
+					<td><img src="{{asset('images/'~ data.photo)}}" alt="" style="width: 150px;"></td>
+					<td>{{ data.prix}}</td>
+					
+					<td>{{ data.categories}}</td>
+					<td>{{ data.createdAt|date('d/m/Y à H:i:s') }}</td>
+					<td>
+						<a href="{{path('admin_crud_produit_edit',{'id':data.id}
+)}}" class="text-dark">
+							<i class="fas fa-edit fa-lg"></i>
+						</a>
+
+						<a onclick="return confirm('Voulez-vous supprimer ce produit ?')" href="{{path('admin_crud_produit_delete',{'id':data.id} )}}"<class="text-dark">
+							<i class="fas fa-trash-alt fa-lg"></i>
+						</a>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+
+	</table>
+
+
+</div>
+ <h1 class="text-center">Ajouter un Produit</h1>
+
+<div class="container col-md-6">
+{{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
+
+	{{ form_row(form.titre) }}
+	{{ form_row(form.description) }}
+	{{ form_row(form.photo ) }}
+	{{ form_row(form.prix) }}
+	
+	{{ form_row(form.categories) }}
+
+	<button class="btn btn-primary my-2" type="submit">Valider</button>
+
+{{ form_end(form) }}
+
+</div>
+{% endblock %}
+

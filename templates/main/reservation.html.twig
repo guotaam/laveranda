@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+{% block body %}
+<h1>Mes Reservations</h1>
+
+
+	
+
+		{{ form_start(form,{attr: {novalidate: 'novalidate'}})}} 
+    
+		{{ form_row(form.date)}}
+		{{ form_row(form.nbr_personne) }}
+        {{ form_row(form.message) }}
+		<button type="submit" class="btn btn-primary">Réserver à ces dates</button>
+
+		{{ form_end(form) }}
+
+		<a href="{{ path('app_login') }}">Veuillez vous connecter</a>
+		pour réserver 
+
+
+
+{% endblock %}

@@ -1,0 +1,68 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminCrudMembreController!{% endblock %}
+
+{% block body %}
+<table class="table table-dark table-striped">
+  
+    <thead>
+    <th>Nom</th>
+		<th>Prenom</th>
+		<th>E-mail</th>
+		<th>num_voie</th>
+        <th>Voie</th>
+		<th>ville</th>
+		<th>CP</th>
+		<th>Date de création</th>
+		<th>Téléphone</th>
+		<th>Action</th>
+    </thead>
+
+    <tbody>
+    {% for membre in membres %}
+        
+    
+    <tr>
+
+    <td>{{membre.nom}}</td>
+      <td>{{membre.prenom}}</td>
+      <td>{{membre.email}}</td>
+	  <td>{{membre.numvoie}}</td>
+	  <td>{{membre.voie}}</td>
+      <td>{{membre.ville}}</td>
+      <td>{{membre.cp}}</td>
+	  <td>{{membre.createdAt|date('d/m/Y à H:i:s') }}
+	  <td>{{membre.telephone}}</td>
+    <td> <a class=" btn btn-seccess" href="{{path ('app_register_edit', {id: membre.id }) }}">Editer</a>
+    <a class=" btn btn-seccess" href="{{path ('admin_crud_membre_delete', {id: membre.id }) }}">Supprimer</td>
+    {# <td>{{membre.}}</td> #}
+    
+    
+    </tr>
+    
+    {% endfor %}
+   
+    </tbody>
+
+
+</table>
+
+ {% endblock %}
+{# <section class="m-5">
+<div class="contenaier formulair  ">
+    <h1>Création Nouveau Membre</h1> #}
+    
+    {# {{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
+	{{ form_row(form.nom) }}
+	{{ form_row(form.prenom) }}
+	{{ form_row(form.email ) }}
+	{{ form_row(form.m) }}
+	{{ form_row(form.photo) }}
+    {{ form_row(form.categorie) }} 
+	{{ form_row(form.etat) }}
+	<button class="btn btn-primary my-2" type="submit">Valider</button>
+	{{ form_end(form) }} #}
+{# </div>
+</div>
+</section> #}

@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminCrudCategories!{% endblock %}
+{% block body %} 
+
+{{  form_start(formCategories) }}
+
+	{{ form_row(formCategories.nom) }}
+	
+
+	<button class="btn btn-primary my-2" type="submit">Valider</button>
+
+{{ form_end(formCategories)  }}
+
+<br><br>
+
+<table class="table table-bordered">
+  <thead >
+		
+		<th>Catégorie</th>
+		<th>Actions</th>
+
+	</thead>
+	
+     <tbody>
+      {% for item in categorieall %}
+    <tr> <td>{{item.nom}}</td></tr>
+	 <tr>
+	  <td><a class="btn btn-primary m-2" href="{{path('admin_crud_categories_edit', {'id': item.id} )}}">Editer</a></td>
+	  <td><a  class="btn btn-primary m-2" href=""></a>Supprimer</td>
+	{% endfor %} 
+    </tr>		  
+  </tbody>
+</table>
+
+
+{% endblock %}
+
+ 
