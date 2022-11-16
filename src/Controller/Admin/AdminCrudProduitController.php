@@ -51,7 +51,7 @@ class AdminCrudProduitController extends AbstractController
             {
               $file=$form->get('photo')->getData();
                 
-              $fileName = $slugger->slug($produit->getId()).uniqid().'.'.$file->guessExtension();
+              $fileName = $slugger->slug($produit->getTitre()).uniqid().'.'.$file->guessExtension();
 
                
                try{
@@ -66,7 +66,7 @@ class AdminCrudProduitController extends AbstractController
             $manager->flush();
             $this->addFlash('success', 'Le produit a bien été enregistré !');
 
-            return $this->redirectToRoute('app_admin');
+            return $this->redirectToRoute('admin_crud_produit_new');
         }
         return $this->renderForm('admin_crud_produit/index.html.twig', [
             'form' => $form,

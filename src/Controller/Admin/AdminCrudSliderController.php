@@ -40,9 +40,9 @@ class AdminCrudSliderController extends AbstractController
         $form->handleRequest($rq);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            if($form->get('file')->getData())
+            if($form->get('photo')->getData())
             {
-              $file=$form->get('file')->getData();
+              $file=$form->get('photo')->getData();
                 
               $fileName = $slugger->slug($slider->getOrdre()).uniqid().'.'.$file->guessExtension();
 
@@ -60,7 +60,7 @@ class AdminCrudSliderController extends AbstractController
             $manager->flush();
             $this->addFlash('success', 'Le slider a bien été enregistré !');
 
-            return $this->redirectToRoute('app_admin');
+            return $this->redirectToRoute('admin_crud_slider_new');
         }
         return $this->renderForm('admin_crud_slider/index.html.twig', [
             'form' => $form,

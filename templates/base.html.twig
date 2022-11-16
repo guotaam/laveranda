@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.2.1/quartz/bootstrap.min.css" integrity="sha512-MtIFp1X1XW20+oDP5Px0yyJ2QuTXsiHqNQnNdC/haBRqVePWs1x7wn5YXpQ6+WWT5sqVawAw43r9hqnjcZ5XZw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
        <link type="text/css" rel="stylesheet" href="{{asset('css/style.css')}}">
-       
+         <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
        
     <body>
 
@@ -22,14 +22,14 @@
     <div class="collapse navbar-collapse" id="navbarColor02">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link active" href="">Home
+          <a class="nav-link active" href="{{path('app_main')}}">Home
             <span class="visually-hidden">(current)</span>
           </a>
         </li>
        
          <li> <a class="nav-link" href="{{path('app_contact')}}">Contact</a></li>
         <li class="nav-item">
-                 <a class="nav-link " href="{{path('admin_crud_avis_new')}}">Avis</a></li>
+                 <a class="nav-link " href="{{path('avis_new')}}">Avis</a></li>
          
                <li class="nav-item">
                  <a class="nav-link " href="">Qui nous sommes</a></li>

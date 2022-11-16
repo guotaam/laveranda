@@ -3,45 +3,31 @@
 {% block title %}Hello AdminCrudAvisController!{% endblock %}
 
 {% block body %}
-<h1>Admin Avis</h1>
 
- 
-    
-		{{ form_start(form) }} 
-          {{ form_row(form.note) }}
-        {{ form_row(form.commentaire,{
-         attr:{
-         placeholder:"Poster un commentaire"
-             }}) }}
-    
- {% if editMode %} 
-		{{ form_row(form.reponse)}}
-		{% endif %}
-		<button type="submit" class="btn btn-primary">Valider</button>
+<br>
+ <section>
+			{% for item in avis %}
+			<div class="container bg-light text-dark">
+				<div class=" m-3 ">
+					
+					<div> {{item.membre.prenom}} {{item.membre.nom}}<br>{{item.note}}/5</div>
+					
 
-		{{ form_end(form) }}
-<br><br>
-   
- {% for item in avisAll %}
- <div class= "bg-light text-dark">
-<div class="container">
-<p>{{item.membre.prenom}}</p>
-<p>{{item.membre.nom}}</p>
-<p>{{item.note}}</p>
-<p>Votre commentaire:{{item.commentaire}}</p>
-<p>{{item.reponse}}</p>
-<button type="submit" class="btn btn-primary" href="{{path('admin_crud_avis_edit', {id:item.id }) }}">Repondre</button>
-</div>
-
-<hr><br>
-</div>
-<br><br>
-   
-  
-{% endfor %}
+					<p class="m-2 ">{{item.commentaire}}"</p>
 
 
-
-
-{% endblock %}
-
+					</div>
+                    <div>
+					 {{item.reponse}}
+					</div>
+					<hr>
+				</div>
+				
+			</div>
+			<a href="{{path('avis_edit',{id: item.id})}}">Repondre</a>
+			{% endfor %}
+			
+		
+			</section>
+			<script src="{{ asset('js/js.js') }}"></script>
+      {% endblock %}

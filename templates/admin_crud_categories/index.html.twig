@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/base.html.twig' %}
 
 {% block title %}Hello AdminCrudCategories!{% endblock %}
 {% block body %} 
@@ -18,18 +18,18 @@
   <thead >
 		
 		<th>Catégorie</th>
-		<th>Actions</th>
+		<th calass ="col-2">Actions</th>
 
 	</thead>
 	
      <tbody>
       {% for item in categorieall %}
-    <tr> <td>{{item.nom}}</td></tr>
-	 <tr>
-	  <td><a class="btn btn-primary m-2" href="{{path('admin_crud_categories_edit', {'id': item.id} )}}">Editer</a></td>
-	  <td><a  class="btn btn-primary m-2" href=""></a>Supprimer</td>
+    <tr> <td>{{item.nom}}</td>
+	  <td><a class="btn btn-primary m-2" href="{{path('admin_crud_categories_edit', {'id': item.id} )}}">Editer</a>
+	  <td><a  class="btn btn-primary m-2" href="{{path('admin_crud_categories_delete', {'id': item.id} )}}">Supprimer</a></td>
+	  </tr>	
 	{% endfor %} 
-    </tr>		  
+    	  
   </tbody>
 </table>
 

@@ -36,11 +36,11 @@ class AdminCrudNewsletterController extends AbstractController
         $form->handleRequest($rq);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            if($form->get('file')->getData())
+            if($form->get('photo')->getData())
             {
-              $file=$form->get('file')->getData();
+              $file=$form->get('photo')->getData();
                 
-              $fileName = $slugger->slug($news->getId()).uniqid().'.'.$file->guessExtension();
+              $fileName = $slugger->slug($news->getTitre()).uniqid().'.'.$file->guessExtension();
 
                
                try{

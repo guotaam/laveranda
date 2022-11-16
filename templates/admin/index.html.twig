@@ -1,8 +1,13 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/base.html.twig' %}
 
-{% block title %}Hello AdminController!{% endblock %}
+    {% block title %}BACKOFFICE{% endblock %}
+   
 
-{% block body %}
+
+    {% block body %}
+    
+    
+    
 <h1 class="text-center my-4">BACKOFFICE</h1>
 
 <p class="text-center">Bienvenue sur votre BackOffice</p>
@@ -11,8 +16,10 @@
 <a href="{{path('admin_crud_categories_new')}}" class="col-md-6 offset-md-3 btn btn-dark mb-2">GESTION DES CATEGORIES</a>
 <a href="{{path('admin_crud_membre')}}" class="col-md-6 offset-md-3 btn btn-dark mb-2">GESTION DES MEMBRES</a>
 <a href="{{path('admin_crud_reservation')}}" class="col-md-6 offset-md-3 btn btn-dark mb-2">GESTION DES RESERVATIONS</a>
-<a href="{{path('admin_crud_avis_new')}}" class="col-md-6 offset-md-3 btn btn-dark mb-2">GESTION DES AVIS</a>
+{# <a href="{{path('admin_crud_avis_new')}}" class="col-md-6 offset-md-3 btn btn-dark mb-2">GESTION DES AVIS</a> #}
 <a href="{{path('admin_crud_newsletter_new')}}" class="col-md-6 offset-md-3 btn btn-dark mb-2">GESTION DES NEWSLETTER</a>
-<a href="{{path('admin_crud_slider_new')}}" class="col-md-6 offset-md-3 btn btn-dark mb-2">GESTION DES SLIDERS</a>
+ <a href="{{path('admin_crud_slider_new')}}" class="col-md-6 offset-md-3 btn btn-dark mb-2">GESTION DES SLIDERS</a>
+    
+    
+    {% endblock %}
 
-{% endblock %}

@@ -28,6 +28,7 @@ class CategoriesType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Categories::class,
+            
         ]);
     }
 }

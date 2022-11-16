@@ -17,7 +17,7 @@ class SliderType extends AbstractType
     {
         $builder
             ->add('ordre')
-           -> add('file',FileType::class,[
+           -> add('photo',FileType::class,[
                 'mapped'=>false,
                 'required'=>false
             ])

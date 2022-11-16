@@ -2,6 +2,13 @@ body
 {
     background:black;
 }
+.star {
+  font-size: 1.5rem;
+}
+
+.hover {
+  color: rgb(255, 196, 0);
+}
 
 header{
     display: flex;

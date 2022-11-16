@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminCrudAvisController!{% endblock %}
+
+{% block body %}
+
+<br>
+ 
+	<section>
+		{% if app.user %}
+
+		<h3 class="text-center">Votre avis est précieux !</h3> 
+			<div class="col-md-6 ">
+			{{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
+        
+            <div class="stars">
+			
+            <i class="lar la-star" data-value="1"></i><i class="lar la-star" data-value="2"></i><i class="lar la-star" data-value="3"></i><i class="lar la-star" data-value="4"></i><i class="lar la-star" data-value="5"></i>
+           </div>
+			
+			<div class=" {% if editMode %}d-none{% else %}d-block{% endif %} ">{{ form_row(form.note) }}</div>
+			<div class=" {% if editMode %}d-none{% else %}d-block {% endif %} ">{{ form_row(form.commentaire) }}</div>
+			<div class=" {% if editMode %}d-block{% else %}d-none{% endif %} ">{{ form_row(form.reponse) }}</div>
+
+      {# {% if is_granted('ROLE_ADMIN') %}
+
+      
+        <div class=" {% if editMode %}d-block{% else %}d-none{% endif %} "><button class="btn btn-primary my-2" type="submit">Repondre</button></div>
+       
+   
+     {% endif %}    #}
+      
+			<button class="btn btn-primary my-2" type="submit">Envoyer</button>
+      
+			{{ form_end(form) }}
+			</diV>
+		{% endif %}
+	</section>
+
+	<hr>
+		
+		<section >
+		
+			{% for item in avisAll %}
+			<div class="container bg-light text-dark">
+				<div class=" m-3 ">
+					
+					<div> {{item.membre.prenom}} {{item.membre.nom}}<br>{{item.note}}/5</div>
+					
+
+					<p class="m-2 ">{{item.commentaire}}"</p>
+
+
+					</div>
+                    <div>
+					 {{item.reponse}}
+					</div>
+					<hr>
+				</div>
+				
+			</div>
+			
+			{% endfor %}
+			
+		
+			</section>
+			<script src="{{ asset('js/js.js') }}"></script>
+      {% endblock %}

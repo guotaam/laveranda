@@ -40,7 +40,7 @@ class AdminCrudCategoriesController extends AbstractController
         $manager->flush();
         
        $this->addFlash('success', 'la categorie a bien été enregistré !');
-       return $this->redirectToRoute('app_admin');
+       return $this->redirectToRoute('admin_crud_categories_new');
        
    }
    return $this->renderForm('admin_crud_categories/index.html.twig',[
@@ -51,4 +51,16 @@ class AdminCrudCategoriesController extends AbstractController
 
    ]);
    }
+   #[Route('/admin/crud/categories/delete/{id}', name:'admin_crud_categories_delete' )]
+    public function delete(Categories $categories = null, EntityManagerInterface $manager): Response
+    {
+        if ($categories) {
+            $manager->remove($categories);
+            $manager->flush();
+            $this->addFlash('success', 'La catégorie a bien été supprimé !');
+           
+        }
+        return $this->redirectToRoute('admin_crud_categories_new');
+
+    } 
 }

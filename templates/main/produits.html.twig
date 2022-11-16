@@ -1,10 +1,10 @@
 {% extends "base.html.twig" %}
 {% block body %}
 
-<h1>mes Produits</h1>
+<h1 class="text-center">Mes Produits</h1>
 
 
-
+<br><br>
 	<div class="row">
 		{% for item in produits %}
 			<div class="col-md-4">
@@ -14,6 +14,7 @@
 					<div class="card-body">
 						<p class="card-text">{{ item.description }}</p>
 						<p class="card-text text-end fw-bold">{{ item.prix }}€</p>
+						<p class="card-text">{{ item.categories }}</p>
 					</div>
 					<div class="card-body text-end">
 						{# <a href="" class="card-link btn btn-primary">Réserver</a> #}
