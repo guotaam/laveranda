@@ -9,7 +9,8 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
        <link type="text/css" rel="stylesheet" href="{{asset('css/style.css')}}">
          <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-       
+    
+  
     <body>
 
 
@@ -27,17 +28,17 @@
           </a>
         </li>
        
-         <li> <a class="nav-link" href="{{path('app_contact')}}">Contact</a></li>
+         {# <li> <a class="nav-link" href="{{path('app_contact')}}">Contact</a></li> #}
         <li class="nav-item">
                  <a class="nav-link " href="{{path('avis_new')}}">Avis</a></li>
          
-               <li class="nav-item">
-                 <a class="nav-link " href="">Qui nous sommes</a></li>
+               {# <li class="nav-item">
+                 <a class="nav-link " href="{{path('fiche')}}">Qui nous sommes</a></li> #}
                 {% if app.user %}
-                <li> <a class="nav-link" href="{{path('app_logout')}}">Déconnexion</a></li>
-                <li><a class="nav-link" href="{{path('app_new_reservation')}}">Reservation</a></li>
-                 <a class="nav-link " href="{{path('profil')}}">Mon compte</a></li>
                 
+                <li><a class="nav-link" href="{{path('app_new_reservation')}}">Reservation</a></li>
+                <li> <a class="nav-link " href="{{path('profil')}}">Mon compte</a></li>
+                <li> <a class="nav-link" href="{{path('app_logout')}}">Déconnexion</a></li>
                 {% else %}
                 <li> <a class="nav-link" href="{{path('app_login')}}">Se connecter</a></li>
                 <li> <a class="nav-link" href="{{path('app_register')}}">S'inscrire</a></li>
@@ -66,7 +67,7 @@
 
 				{% endfor %}
 			{% endfor %}
-			{# boucle qui permet d'afficher les flashs dans des couleurs différentes dynamiquement selon le type (voir doc flashs) #}
+		
 			{% block body %}{% endblock %}
 		</div>
 
@@ -80,45 +81,21 @@
       <!--Grid row-->
       <div class="row mt-4">
         <!--Grid column-->
+         <h5 class="text-uppercase mb-4">La Veranda</h5>
         <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
-          <h5 class="text-uppercase mb-4">Qui Nous sommes</h5>
+         
+          <div class="map-responsive">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2633.873356241863!2d2.4127790150497224!3d48.68878592058863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e5df8c00bbfe9f%3A0xa1d6fc66d77c854d!2s13%20Av.%20Paul%20Lafargue%2C%2091210%20Draveil!5e0!3m2!1sfr!2sfr!4v1667992286928!5m2!1sfr!2sfr" width="350" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"  ></iframe>
+              </div>
 
-          <p>
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-            voluptatum deleniti atque corrupti.
-          </p>
+       
 
-          <p>
-            Blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas
-            molestias.
-          </p>
+          
 
-          <div class="mt-4">
-            <!-- Facebook -->
-            <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-facebook-f"></i></a>
-            <!-- Dribbble -->
-            <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-dribbble"></i></a>
-            <!-- Twitter -->
-            <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-twitter"></i></a>
-            <!-- Google + -->
-            <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-google-plus-g"></i></a>
-            <!-- Linkedin -->
-          </div>
         </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
+       
         <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-          {# <h5 class="text-uppercase mb-4 pb-1">Search something</h5> #}
-
-
-
-
-          <div class="form-outline form-white mb-4">
-            {# <input type="text" id="formControlLg" class="form-control form-control-lg" /> #}
-            {# <label class="form-label" for="formControlLg">Search</label> #}
-          </div>
-
+      
           <ul class="fa-ul" style="margin-left: 1.65em;">
             <li class="mb-3">
               <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">laveranda</span>
@@ -127,44 +104,54 @@
               <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">contact@example.com</span>
             </li>
             <li class="mb-3">
-              <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">003350189655</span>
+              <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">0975172999</span>
             </li>
           </ul>
         </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
+        
         <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
           <h5 class="text-uppercase mb-4">les horaires d'ouvertures</h5>
 
           <table class="table text-center text-white">
-            <tbody class="fw-normal">
-              <tr>
-                <td>Mon - Thu:</td>
-                <td>8am - 9pm</td>
+            <div class="fw-normal">
+              <hr>
+                <p> lundi - Mardi- Mercredi - Jeudi - Vendredi:<p>
+                <p>11:00 - 15:00</p>
+                <p> 18:00 - 00:00</p>
               </tr>
-              <tr>
-                <td>Fri - Sat:</td>
-                <td>8am - 1am</td>
-              </tr>
-              <tr>
-                <td>Sunday:</td>
-                <td>9am - 10pm</td>
-              </tr>
-            </tbody>
+              <hr>
+                <p>samedi - Dimanche:</p>
+                <p>11:00 - 15:00</p>
+                <p>18:00 - 02:00</p>
+              <hr>
+             
+            </div>
           </table>
         </div>
         <!--Grid column-->
       </div>
       <!--Grid row-->
-    </div>
+      
     <!-- Grid container -->
 
     <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2020 Copyright:
-     // <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+   <br>
+   <h3 class="text-center">Suivez_Nous</h3>
+ 
+     <div align="center"> 
+           <a  href="" type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-facebook-f"></i></a>
+   
+           <a  href="" type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-instagram"></i></a>
+    
+            <a  href="" type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-snapchat"></i></a>
+     
     </div>
+    <br>
+    <div class="text-center text-dark p-3" style="background-color: white;">
+      © 2022 Copyright:
+      <a class="text-white" href=""></a>
+    </div>
+   
     <!-- Copyright -->
   </footer>
 
@@ -175,5 +162,6 @@
 
     
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/js/bootstrap.bundle.min.js" integrity="sha512-BOsvKbLb0dB1IVplOL9ptU1EYA+LuCKEluZWRUYG73hxqNBU85JBIBhPGwhQl7O633KtkjMv8lvxZcWP+N3V3w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+       
     </body>
 </html>

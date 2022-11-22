@@ -29,7 +29,7 @@
 </div>
 
     <div class="text-center"> 
-     <img src="{{asset('images/p2.jpeg')}}" width="150px" height="150px" alt="hamburguer"><br>
+     <img src="{{asset('images/dessert.jpg')}}" width="150px" height="150px" alt="hamburguer"><br>
       <a href="{{path('app_produits',{id: '3'})}} " class=""> Desserts </a>
        
      </div>
@@ -38,6 +38,18 @@
 	        	
 </section>
 <br><br>
+
+
+<div class="container bg-white">
+<br>
+<div class ="content-header">
+<i class="fa-solid fa-camera-retro"></i> 
+<br><br>
+
+<h2 class="text-center text-dark">Galeries</h2>
+
+</div>
+<br>
 
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
@@ -49,81 +61,44 @@
       <img src="{{ asset('images/' ~ item.photo) }}" class="d-block w-100 mx-750 " alt="{{item.photo}}">
     </div>
   {% endfor %}
-   
-  
+ 
   </div>
-<section>
-		{% if app.user %}
-
-		<h3 class="text-center">Votre avis est précieux !</h3> 
-			{# <div class="col-md-6 ">
-			{{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
-        
-            <div class="stars">
-			
-            <i class="lar la-star" data-value="1"></i><i class="lar la-star" data-value="2"></i><i class="lar la-star" data-value="3"></i><i class="lar la-star" data-value="4"></i><i class="lar la-star" data-value="5"></i>
-           </div>
-			
-			<div >{{ form_row(form.note) }}</div>
-			<div >{{ form_row(form.commentaire) }}</div>
-			{# <div >{{ form_row(form.reponse) }}</div> #}
-
-
-{# 
-			<button class="btn btn-primary my-2" type="submit">Valider</button>
-
-			{{ form_end(form) }} #} #}
-			</diV>
-		{% endif %}
-	</section>
-
+</div>
 	<hr>
 		
-		<section >
-		
-			{% for item in avisAll %}
-			<div class="container bg-light text-dark">
-				<div class=" m-3 ">
-					
-					<div> {{item.membre.prenom}} {{item.membre.nom}}<br>{{item.note}}/5</div>
-					
+ <br><br>
+{# 
+<div id="carouselExampleSlidesOnly " class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner bg-white text-dark">
+  {% for item in avisAll %}
+    <div class="carousel-item  {% if item.membre.id == 1 %}active {% endif %}">
+      <div>
+        <p>{{item.note}}/5</p>
+        <h4>{{item.membre.prenom}} {{item.membre.nom}}</h4>
 
-					<p class="m-2 ">{{item.commentaire}}"</p>
-
-
-					</div>
-                    <div>
-					 {{item.reponse}}
-					</div>
-					<hr>
-				</div>
-				
-			</div>
-			
-			{% endfor %}
-			
-		
-			</section>
-
-
-
-
-
-
-
-
-
-<section class="form">
- <div class="container-fluid">
- <div class="row">
-        <div class="offset-lg-2 col-md-10 offset-md-1">
-          <div class="formc">
-            <hr>
-            <h2>
-             Contactez_Nous!
-            </h2>
-          </div>
-        </div>
+        <p><br>{{item.commentaire}}</p>
       </div>
+      
+    </div>
+   {% endfor %}
+  </div>
+</div> #}
+
+{# 
+<div class="container py-5">
+<div class="row">
+<h1 class="mt-0 text-light"></h1>
+<div class="col-md-8">
+ 
+ <p>nous explorons les classiques de la grande gastronomie française pour les remettre au goût du jour.
+
+Ainsi, notre cuisine offre le réconfort des produits nobles et des appellations simples qui ont fait la réputation de notre maison et assure une véritable contemporanéité à travers des sauces d'exception.</p>
+</div>
+<div class ="col-md-4">
+ <img src="{{asset('images/patestom.jpg')}}" alt="Nouveau !" />
+</div>
+
+</div>
+</div> #}
 
 {% endblock %}
