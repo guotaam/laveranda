@@ -1,0 +1,65 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "askForPassword": true,
+            "driver": "MySQL",
+            "name": "laveranda",
+            "database": "mysql://ckny4hil69g63dzf:cxss8m6yrloxyvqr@ltnya0pnki2ck9w8.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/ma4ilvulhwtyx9of",
+            "connectString": "mysql://ckny4hil69g63dzf:cxss8m6yrloxyvqr@ltnya0pnki2ck9w8.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/ma4ilvulhwtyx9of"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "askForPassword": true,
+            "driver": "MySQL",
+            "connectString": "mysql://ckny4hil69g63dzf:cxss8m6yrloxyvqr@ltnya0pnki2ck9w8.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/ma4ilvulhwtyx9of",
+            "name": "laveranda"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "askForPassword": true,
+            "driver": "MariaDB",
+            "connectString": "mysql://ckny4hil69g63dzf:cxss8m6yrloxyvqr@ltnya0pnki2ck9w8.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/ma4ilvulhwtyx9of",
+            "name": "laveranda"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "askForPassword": true,
+            "driver": "MariaDB",
+            "connectString": "mysql://ckny4hil69g63dzf:cxss8m6yrloxyvqr@ltnya0pnki2ck9w8.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/ma4ilvulhwtyx9of",
+            "name": "laveranda"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "askForPassword": true,
+            "driver": "MySQL",
+            "connectString": "mysql://ckny4hil69g63dzf:cxss8m6yrloxyvqr@ltnya0pnki2ck9w8.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/ma4ilvulhwtyx9of",
+            "name": "laveranda"
+        }
+    ]
+}

@@ -38,9 +38,9 @@ class RegistrationController extends AbstractController
 
             $entityManager->persist($user);
             $entityManager->flush();
-            $userName=$user->getPrenom();
-            $Mail = new Mail;
-            $Mail->send($user->getEmail(), $userName, "Bienvenue", "Bonjour $userName ");
+            // $userName=$user->getPrenom();
+            // $Mail = new Mail;
+            // $Mail->send($user->getEmail(), $userName, "Bienvenue", "Bonjour $userName ");
 
 
             // do anything else you need here, like send an email
